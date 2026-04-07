@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# ETA: ~3s observed 2026-04-07
+set -euo pipefail
+
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
+
+echo "=== brew tap repo-state ==="
+
+echo "--- git ---"
+git -C "$REPO" rev-parse --abbrev-ref HEAD
+git -C "$REPO" rev-parse HEAD
+git -C "$REPO" status --short
+
+echo "--- formulas ---"
+echo "sive.rb:"
+grep -E '^\s+(url|sha256|version)\s' "$REPO/Formula/sive.rb"
+echo "lgtvctrl.rb:"
+grep -E '^\s+(url|sha256|version)\s' "$REPO/Formula/lgtvctrl.rb"
+
+echo "--- toolchain ---"
+{ brew --version || true; } | head -1
+ruby --version
+
+echo "--- tap path ---"
+brew --repository PeachlifeAB/brew 2>/dev/null || echo "(tap not installed)"
