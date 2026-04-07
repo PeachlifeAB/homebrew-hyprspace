@@ -22,4 +22,4 @@ echo "--- toolchain ---"
 ruby --version
 
 echo "--- tap path ---"
-brew --repository PeachlifeAB/brew 2>/dev/null || echo "(tap not installed)"
+brew --repository PeachlifeAB/tap 2>/dev/null || echo "(tap not installed)"
