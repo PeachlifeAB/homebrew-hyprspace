@@ -9,7 +9,6 @@ class Lgtvctrl < Formula
 
   bottle do
     root_url "https://github.com/PeachlifeAB/homebrew-tap/releases/download/lgtvctrl-0.1.0"
-    rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe: "e7669fd8c1e14ff14f4e8c32eb6c9ac25ad25b61d69a6647f441886966dff6ab"
   end
 
