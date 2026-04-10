@@ -2,7 +2,7 @@ class Bgtail < Formula
   desc "Run long-running commands detached with minimal heartbeat"
   homepage "https://github.com/PeachlifeAB/bgtail"
   url "https://github.com/PeachlifeAB/bgtail/archive/refs/tags/0.1.0.tar.gz"
-  sha256 "30007b93c81602c2b764253faeb69a8ff5e85ce56bb191e426ae61231afbf509"
+  sha256 "8c93bca964e15df0ebc17a1fee1b54e5a5c74a578b2993fc79adc171a20e6912"
   license "MIT"
 
   depends_on "uv" => :build
@@ -15,6 +15,6 @@ class Bgtail < Formula
   end
 
   test do
-    assert_match "bgtail", shell_output("#{bin}/bgtail --version")
+    assert_match "0.1.0", shell_output("#{bin}/bgtail --version")
   end
 end
